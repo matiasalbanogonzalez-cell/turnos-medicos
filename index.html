@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos Médicos - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Turnos Médicos</h1>
+            <nav id="nav">
+                <button id="loginBtn">Iniciar Sesión</button>
+                <button id="registerBtn">Registrarse</button>
+                <button id="logoutBtn" style="display: none;">Cerrar Sesión</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Login Form -->
+            <section id="loginSection" class="auth-section">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                </form>
+                <p id="loginMessage"></p>
+            </section>
+
+            <!-- Register Form -->
+            <section id="registerSection" class="auth-section" style="display: none;">
+                <h2>Registrarse</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerNombre">Nombre:</label>
+                        <input type="text" id="registerNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerApellido">Apellido:</label>
+                        <input type="text" id="registerApellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Contraseña:</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrarse</button>
+                </form>
+                <p id="registerMessage"></p>
+            </section>
+
+            <!-- Dashboard -->
+            <section id="dashboard" style="display: none;">
+                <div class="dashboard-header">
+                    <h2>Mi Dashboard</h2>
+                    <button id="createTurnoBtn" class="btn-secondary">Crear Nuevo Turno</button>
+                </div>
+
+                <!-- Create Turno Form -->
+                <div id="createTurnoSection" style="display: none;">
+                    <h3>Crear Turno</h3>
+                    <form id="createTurnoForm">
+                        <div class="form-group">
+                            <label for="turnoFecha">Fecha:</label>
+                            <input type="date" id="turnoFecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="turnoHora">Hora:</label>
+                            <input type="time" id="turnoHora" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="turnoProfesional">ID del Profesional:</label>
+                            <input type="text" id="turnoProfesional" placeholder="Ingrese ID del profesional" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="turnoEspecialidad">Especialidad:</label>
+                            <input type="text" id="turnoEspecialidad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="turnoMotivo">Motivo (opcional):</label>
+                            <textarea id="turnoMotivo"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Crear Turno</button>
+                    </form>
+                    <p id="createTurnoMessage"></p>
+                </div>
+
+                <!-- List Turnos -->
+                <div id="turnosList">
+                    <h3>Mis Turnos</h3>
+                    <div id="turnosContainer"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
